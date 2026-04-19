@@ -5,7 +5,7 @@
 ---
 
 ## 🔗 Links
-[🚀 Live Demo Link] | [🛠️ GitHub Repository](https://github.com/izharusmani786/traveler)
+[🚀 Live Demo Link](https://travelercity.netlify.app/) | [🛠️ GitHub Repository](https://github.com/izharusmani786/traveler)
 
 ---
 
