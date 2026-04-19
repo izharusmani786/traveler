@@ -62,27 +62,22 @@ This project was developed over a **3-Day Intensive Sprint** focusing on scalabi
 ## 🚀 Installation & Local Setup
 
 ### 1. Clone the repo
-git clone https://github.com/izharusmani786/traveler.git
-cd traveler
+* git clone https://github.com/izharusmani786/traveler.git
+* cd traveler
 
 ### 2. Install Dependencies
 npm install
 
 ### 3. Configure Environment
-Create a `.env` file in the root and add your keys:
-VITE_CITY_API_BASE_URL=https://wft-geo-db.p.rapidapi.com/v1/geo
-VITE_X_RAPIDAPI_HOST=wft-geo-db.p.rapidapi.com
-VITE_RAPIDAPI_KEY=YOUR_API_KEY
-VITE_WEATHER_API_KEY=YOUR_API_KEY
-VITE_FSQ_API_KEY=YOUR_API_KEY
-VITE_IPINFO_TOKEN=YOUR_API_KEY
+* Create a `.env` file in the root and add your keys:
+* VITE_CITY_API_BASE_URL=https://wft-geo-db.p.rapidapi.com/v1/geo
+* VITE_X_RAPIDAPI_HOST=wft-geo-db.p.rapidapi.com  -- For Country API
+* VITE_RAPIDAPI_KEY=YOUR_API_KEY -- For Country API
+* VITE_WEATHER_API_KEY=YOUR_API_KEY -- For Weather API
+* VITE_FSQ_API_KEY=YOUR_API_KEY -- For Attracions API
+* VITE_IPINFO_TOKEN=YOUR_API_KEY -- For IPINFO
 
 ### 4. Start Development
 npm run dev
 
 ---
-
-## 🛠️ Git Commands to Push Changes
-git add README.md
-git commit -m "UI: Improve README styling and readability"
-git push origin main
