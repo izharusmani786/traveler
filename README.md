@@ -1,72 +1,75 @@
-✈️ Traveler: Professional Travel Planning Dashboard
-Traveler is a full-featured travel management system built to demonstrate modern React patterns, robust state management, and complex API orchestrations.
+# ✈️ Traveler: Professional Travel Planning Dashboard
 
-🔗 [Live Demo Link] | 🛠️ GitHub Repo
-🏗️ Architecture & Development Roadmap
-This project was developed over a 3-Day Intensive Sprint focusing on scalability and performance.
+**Traveler** is a full-featured travel management system built to demonstrate modern React patterns, robust state management, and complex API orchestrations.
 
-Day 1: The Foundation
-Modular Folder Structure: Organized by features, components, services, and hooks.
+---
 
-Dynamic Routing: Implemented react-router-dom for seamless transitions between Dashboard, Search, and Trip Details.
+## 🔗 Links
+[🚀 Live Demo Link] | [🛠️ GitHub Repository](https://github.com/izharusmani786/traveler)
 
-API Orchestration: Integrated OpenWeatherMap and REST Countries API.
+---
 
-Day 2: State & Persistence
-State Management: Utilized Redux Toolkit for centralized data flow (trips, weather, and attractions).
+## 🏗️ Architecture & Development Roadmap
+This project was developed over a **3-Day Intensive Sprint** focusing on scalability and performance.
 
-Data Persistence: Integrated LocalStorage to ensure user trips are saved across browser sessions.
+### 📅 Day 1: The Foundation
+* **Modular Folder Structure:** Organized by features, components, services, and hooks.
+* **Dynamic Routing:** Implemented `react-router-dom` for seamless transitions.
+* **API Orchestration:** Integrated OpenWeatherMap and REST Countries API.
 
-Custom Logic: Developed useDebounce for optimized city searching and useFetch for reusable API logic.
+### 📅 Day 2: State & Persistence
+* **State Management:** Utilized **Redux Toolkit** for centralized data flow.
+* **Data Persistence:** Integrated **LocalStorage** for cross-session storage.
+* **Custom Logic:** Developed `useDebounce` and `useFetch` for reusable logic.
 
-Day 3: Production Readiness
-Theme Engine: Built-in Dark/Light mode support with Tailwind CSS.
+### 📅 Day 3: Production Readiness
+* **Theme Engine:** Built-in Dark/Light mode support with Tailwind CSS.
+* **Security:** Mock Authentication flow with **Protected Routes**.
+* **Stability:** Added Error Boundaries and an API abstraction layer.
 
-Security: Mock Authentication flow with Protected Routes to guard user data.
+---
 
-Stability: Added Error Boundaries and an API abstraction layer to handle failures gracefully.
+## 🛠️ Tech Stack
 
-🛠️ Tech Stack
-Core: React 18 (Functional Components + Hooks)
+| Layer | Technology |
+| :--- | :--- |
+| **Core** | React 18 (Hooks + Functional Components) |
+| **State** | Redux Toolkit (Slices & Async Thunks) |
+| **Styling** | Tailwind CSS (Dark Mode + Responsive) |
+| **Networking** | Axios with custom interceptors |
+| **Icons** | Lucide React |
 
-State: Redux Toolkit (Slices & Async Thunks)
+---
 
-Styling: Tailwind CSS (Responsive Design + Dark Mode)
+## ✨ Features Implemented
 
-Networking: Axios with custom interceptors
+### 🔍 Search & Discovery
+* **Real-time Autocomplete:** City searching via GeoDB Cities API.
+* **Instant Data:** Fetching weather, currency, and flags upon selection.
 
-Icons: Lucide React
+### 📍 Trip Management
+* **Ongoing Trip Widget:** Auto-highlights active trips based on current date.
+* **Smart Sorting:** Automatically places upcoming trips at the top.
+* **CRUD Operations:** Save, favorite, and delete trips with persistent state.
 
-✨ Features implemented
-✅ Search & Discovery
-Real-time city autocomplete using GeoDB Cities API.
+### ⚡ Performance & UX
+* **Optimized Rendering:** Used `useMemo` and `useCallback` to prevent unnecessary re-renders.
+* **Visual Feedback:** Shimmer/Skeleton screens for loading states.
+* **Global Error Handling:** API Interceptors for centralized error management.
 
-Instant weather updates and country data (Currency, Language, Flag) upon selection.
+---
 
-✅ Trip Management
-Ongoing Trip Widget: Automatically detects and highlights active trips based on current date.
+## 🚀 Installation & Local Setup
 
-Auto-Sorting: Smart logic that places upcoming trips at the top of the queue.
-
-Trip Storage: Save, delete, and favorite trips with persistent state.
-
-✅ UI/UX & Performance
-Optimized Rendering: Used useMemo for heavy sorting operations and useCallback for event handlers.
-
-Loading States: Shimmer/Skeleton screens for attraction lists and weather cards.
-
-API Interceptors: Centralized error handling for all outbound requests.
-
-🚀 Installation & Local Setup
-1. Clone the repo:
+### 1. Clone the repo
 git clone https://github.com/izharusmani786/traveler.git
+cd traveler
 
-2. Install Dependencies:
+### 2. Install Dependencies
 npm install
 
-3. Configure Environment:
-Create a .env file and add your API keys:
-
+### 3. Configure Environment
+Create a `.env` file in the root and add your keys:
 VITE_CITY_API_BASE_URL=https://wft-geo-db.p.rapidapi.com/v1/geo
 VITE_X_RAPIDAPI_HOST=wft-geo-db.p.rapidapi.com
 VITE_RAPIDAPI_KEY=YOUR_API_KEY
@@ -74,5 +77,12 @@ VITE_WEATHER_API_KEY=YOUR_API_KEY
 VITE_FSQ_API_KEY=YOUR_API_KEY
 VITE_IPINFO_TOKEN=YOUR_API_KEY
 
-4. Start Development:
+### 4. Start Development
 npm run dev
+
+---
+
+## 🛠️ Git Commands to Push Changes
+git add README.md
+git commit -m "UI: Improve README styling and readability"
+git push origin main
