@@ -1,8 +1,10 @@
 import { locationApi } from "./axiosInstance";
 
+const TOKEN_IPINFO = import.meta.env.VITE_IPINFO_TOKEN
+
 export const getLocationByIP = async () => {
     try {
-        const data = await locationApi.get('json?token=6cd6ef1fc4fb9c');
+        const data = await locationApi.get(`json?token=${TOKEN_IPINFO}`);
 
         if (!data) {
             throw new Error("No data received");
