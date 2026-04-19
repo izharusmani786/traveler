@@ -1,0 +1,3 @@
+/api/fsq/* https://api.foursquare.com/:splat  200!
+/ipapi/* https://ipinfo.io/:splat           200!
+/* /index.html                        200
