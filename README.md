@@ -70,6 +70,7 @@ npm install
 
 ### 3. Configure Environment
 * Create a `.env` file in the root and add your keys:
+
 **City API**
 * VITE_CITY_API_BASE_URL=https://wft-geo-db.p.rapidapi.com/v1/geo
 * VITE_X_RAPIDAPI_HOST=wft-geo-db.p.rapidapi.com
