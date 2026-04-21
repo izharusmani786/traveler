@@ -10,7 +10,7 @@ function ActionsBar({ city, popUpOoen }) {
                 <div className="p-2 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
                     <Sparkles size={18} className="text-blue-600 dark:text-blue-400" />
                 </div>
-                <div className="flex flex-col">
+                <div className="flex flex-col pr-5">
                     <span className="text-sm font-black text-slate-900 dark:text-white leading-none mb-1">
                         Ready to explore {city}?
                     </span>

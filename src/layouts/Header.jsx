@@ -93,7 +93,7 @@ const Header = ({ toggleSidebar }) => {
             <div className="absolute right-0 mt-3 w-56 origin-top-right bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl py-2 animate-in fade-in zoom-in duration-200">
               <div className="px-4 py-3 border-b border-slate-100 dark:border-slate-800">
                 <p className="text-sm font-bold text-slate-900 dark:text-white">Account Info</p>
-                <p className="text-[10px] text-slate-500 truncate">izhar.usmani@example.com</p>
+                <p className="text-[10px] text-slate-500 truncate">{user?.name}@kellton.com</p>
               </div>
               
               <div className="p-2">

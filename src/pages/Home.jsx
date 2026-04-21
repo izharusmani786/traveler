@@ -2,11 +2,14 @@ import { Map, Heart, Calendar, CloudSun, Navigation } from 'lucide-react';
 import AttractionsList from '../components/Attractions'; 
 import { useSelector } from 'react-redux'; 
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
 
 function Home() {
+  const { user } = useAuth()
+
   const navigate = useNavigate();
-  const userName = "Izhar Usmani"; 
+  const userName = user?.name; 
   const trips = useSelector((state) => state.trips.trips)
   const { data: weather } = useSelector((state) => state.weather )
   const { data: attractions, loading: loadingAttractions } = useSelector((state) => state.attractions);
@@ -33,7 +36,7 @@ function Home() {
   }
 
   return (
-    <div className="min-h-screen p-4 md:p-8 transition-colors duration-300">
+    <div className="min-h-screen transition-colors duration-300">
       {/* 1. Header Section */}
       <header className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
         <div>

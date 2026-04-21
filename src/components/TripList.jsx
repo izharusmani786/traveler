@@ -22,7 +22,7 @@ function TripList({ trips, title, handleOpenTrip, handleRemoveTrip }) {
     }
 
     return (
-        <div className="p-4 md:p-8 mx-auto space-y-10 transition-colors">
+        <div className="mx-auto space-y-10 transition-colors">
             {/* Header Section */}
             <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-6">
                 <div>
@@ -30,7 +30,7 @@ function TripList({ trips, title, handleOpenTrip, handleRemoveTrip }) {
                         {title}<span className="text-blue-600">.</span>
                     </h1>
                     <div className="flex items-center gap-2 mt-1">
-                        <span className="px-2 py-0.5 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold rounded-md">
+                        <span className="py-0.5 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold rounded-md">
                             {trips.length} Destinations
                         </span>
                         <p className="text-slate-500 dark:text-slate-400 text-sm font-medium">
@@ -41,7 +41,7 @@ function TripList({ trips, title, handleOpenTrip, handleRemoveTrip }) {
             </div>
 
             {/* Grid - Standardized spacing */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 mx-auto">
                 {trips.map((trip) => (
                     <TripCard 
                         key={trip.id} 

@@ -34,7 +34,7 @@ const TripDetails = () => {
   }
 
   return (
-    <div className="p-6 space-y-8">
+    <div className="space-y-8">
 
       {/* 🌄 HERO SECTION */}
       <Hero city={trip.city} country={trip.country} createdAt={trip.createdAt} startDate={trip.startDate} endDate={trip.endDate} isFavorite={trip.isFavorite} />

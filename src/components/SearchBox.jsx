@@ -101,7 +101,13 @@ const SearchBox = () => {
                 <span className="font-medium">Searching for cities...</span>
               </div>
             ) : (
-              <div className="max-h-72 overflow-y-auto">
+              /* CUSTOM SCROLLBAR CLASSES ADDED BELOW */
+              <div className="max-h-72 overflow-y-auto 
+                scrollbar-thin 
+                scrollbar-thumb-slate-300 dark:scrollbar-thumb-slate-700 
+                scrollbar-track-transparent 
+                hover:scrollbar-thumb-slate-400 dark:hover:scrollbar-thumb-slate-600">
+                
                 {Array.isArray(cities) && 
                   cities.map((city) => (
                     <div

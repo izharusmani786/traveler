@@ -1,72 +1,94 @@
+import React, { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "../pages/Home";
-import Login from "../pages/Login";
-import ProtectedRoute from "./ProtectedRoute";
+
+// Components that should load immediately (Static)
 import MainLayout from "../layouts/MainLayout";
-import SearchResults from "../pages/SearchResults";
-import Trips from "../pages/Trips";
-import TripDetails from "../pages/TripDetails";
-import FavoriteTrips from "../pages/FavoriteTrips";
+import ProtectedRoute from "./ProtectedRoute";
 import RouteWithError from "../components/common/RouteWithError";
+import HomeSkeleton from "../components/skeletons/DashboardSkeleton";
+import SearchResultsSkeleton from "../components/skeletons/SearchResultsSkeleton";
+import TripsSkeleton from "../components/skeletons/TripListSkeleton";
+import TripDetailsSkeleton from "../components/skeletons/TripDetailsSkeleton";
+
+
+// Lazy Loaded Pages
+const Home = lazy(() => import("../pages/Home"));
+const Login = lazy(() => import("../pages/Login"));
+const SearchResults = lazy(() => import("../pages/SearchResults"));
+const Trips = lazy(() => import("../pages/Trips"));
+const TripDetails = lazy(() => import("../pages/TripDetails"));
+const FavoriteTrips = lazy(() => import("../pages/FavoriteTrips"));
 
 const AppRoutes = () => {
   return (
-    <Routes>
+      <Routes>
+        <Route element={<MainLayout />}>
+          <Route 
+            path="/" 
+            element={
+              <ProtectedRoute>
+                <RouteWithError>
+                  <Suspense fallback={<HomeSkeleton/>}>
+                  <Home />
+                  </Suspense>
+                </RouteWithError>
+              </ProtectedRoute>
+            } 
+          />
 
-      <Route element={<MainLayout />}>
-        
-        <Route 
-          path="/" 
-          element={
-            <RouteWithError>
-              <Home />
-            </RouteWithError>
-          } 
-        />
+          <Route 
+            path="/search" 
+            element={
+              <ProtectedRoute>
+                <RouteWithError>
+                  <SearchResults />
+                </RouteWithError>
+              </ProtectedRoute>
+            } 
+          />
 
-        <Route 
-          path="/search" 
-          element={
-            <ProtectedRoute>
-              <RouteWithError>
-                <SearchResults />
-              </RouteWithError>
-            </ProtectedRoute>
-          } 
-        />
+          <Route 
+            path="/trips" 
+            element={
+              <ProtectedRoute>
+                <RouteWithError>
+                  <Suspense fallback={<TripsSkeleton/>}>
+                    <Trips />
+                  </Suspense>
+                </RouteWithError>
+              </ProtectedRoute>
+            } 
+          />
 
-        <Route 
-          path="/trips" 
-          element={
-            <RouteWithError>
-              <Trips />
-            </RouteWithError>
-          } 
-        />
+          <Route 
+            path="/trip/:id" 
+            element={
+              <ProtectedRoute>
+                <RouteWithError>
+                  <Suspense fallback={<TripDetailsSkeleton/>}>
+                    <TripDetails />
+                  </Suspense>
+                </RouteWithError>
+              </ProtectedRoute>
+            } 
+          />
 
-        <Route 
-          path="/trip/:id" 
-          element={
-            <RouteWithError>
-              <TripDetails />
-            </RouteWithError>
-          } 
-        />
+          <Route 
+            path="/favorite-trips" 
+            element={
+              <ProtectedRoute>
+                <RouteWithError>
+                  <Suspense fallback={<TripsSkeleton/>}>
+                    <FavoriteTrips />
+                  </Suspense>
+                </RouteWithError>
+              </ProtectedRoute>
+            } 
+          />
+        </Route>
 
-        <Route 
-          path="/favorite-trips" 
-          element={
-            <RouteWithError>
-              <FavoriteTrips />
-            </RouteWithError>
-          } 
-        />
-
-      </Route>
-
-      <Route path="/login" element={<Login />} />
-
-    </Routes>
+        <Route path="/login" element={<Login />} />
+      </Routes>
   );
 };
 

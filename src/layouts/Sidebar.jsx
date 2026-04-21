@@ -59,6 +59,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
               <li key={item.name}>
                 <Link
                   to={item.path}
+                  onClick={toggleSidebar} 
                   className={`group flex items-center gap-3 px-4 py-3 rounded-2xl font-bold transition-all duration-300 ${
                     isActive
                       ? "bg-blue-600 text-white shadow-lg shadow-blue-500/20"

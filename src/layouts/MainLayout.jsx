@@ -21,7 +21,13 @@ const MainLayout = () => {
         <Header toggleSidebar={toggleSidebar} />
 
         {/* Page Content */}
-        <main className="flex-1 p-6 overflow-y-auto dark:bg-slate-950 dark:text-white">
+        <main className="flex-1 p-4 md:p-6 lg:p-6  overflow-y-auto  
+                 dark:bg-slate-950 dark:text-white
+                 scrollbar-thin 
+                 scrollbar-thumb-blue-600 
+                 scrollbar-track-gray-200
+                 dark:scrollbar-thumb-slate-700 
+                 dark:scrollbar-track-slate-900">
           <Outlet />
         </main>
 

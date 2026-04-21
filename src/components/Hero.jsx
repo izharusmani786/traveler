@@ -36,13 +36,22 @@ function Hero({ city, country, createdAt, startDate, endDate, isFavorite }) {
 
             {/* Navigation & Action Buttons */}
             <div className="absolute top-4 inset-x-4 z-10 flex justify-between items-center">
-                {/* Back Button */}
-                <button 
-                    onClick={() => window.history.back()}
-                    className="p-2.5 bg-black/20 backdrop-blur-md hover:bg-white text-white hover:text-black rounded-xl transition-all border border-white/20 flex items-center justify-center group/back"
-                >
-                    <ChevronLeft size={20} className="group-hover/back:-translate-x-0.5 transition-transform" />
-                </button>
+                <div className="flex gap-2">
+                    {/* Back Button */}
+                    <button 
+                        onClick={() => window.history.back()}
+                        className="p-2.5 bg-black/20 backdrop-blur-md hover:bg-white text-white hover:text-black rounded-xl transition-all border border-white/20 flex items-center justify-center group/back"
+                    >
+                        <ChevronLeft size={20} className="group-hover/back:-translate-x-0.5 transition-transform" />
+                    </button>
+                    {/* Upcoming Badge */}
+                    <div className="flex">
+                        <div className="flex items-center gap-2 px-3 py-1 bg-blue-600/90 backdrop-blur-md text-white text-[9px] font-black uppercase tracking-widest rounded-full border border-blue-400/30 shadow-lg">
+                            <Sparkles size={10} className="animate-pulse" />
+                            Upcoming Trip
+                        </div>
+                    </div>
+                </div>
 
                 <div className="flex gap-2">
                     {/* Share Button */}
@@ -67,15 +76,7 @@ function Hero({ city, country, createdAt, startDate, endDate, isFavorite }) {
             </div>
 
             {/* Content Overlay */}
-            <div className="absolute inset-0 p-6 md:p-10 flex flex-col justify-between pt-20 md:pt-24">
-                
-                {/* Top Badge */}
-                <div className="flex">
-                   <div className="flex items-center gap-2 px-3 py-1 bg-blue-600/90 backdrop-blur-md text-white text-[9px] font-black uppercase tracking-widest rounded-full border border-blue-400/30 shadow-lg">
-                       <Sparkles size={10} className="animate-pulse" />
-                       Upcoming Trip
-                   </div>
-                </div>
+            <div className="absolute inset-0 p-6 md:p-10 flex flex-col justify-between pt-40 md:pt-40 mt:10 md:mt-10">
 
                 {/* Bottom Row */}
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
