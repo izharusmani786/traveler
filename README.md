@@ -74,22 +74,22 @@ npm install
 **City API**
 * VITE_CITY_API_BASE_URL=https://wft-geo-db.p.rapidapi.com/v1/geo
 * VITE_X_RAPIDAPI_HOST=wft-geo-db.p.rapidapi.com
-* VITE_RAPIDAPI_KEY=3428fd9e71mshb9ef55067dd1b32p13e52cjsn86ad1e1d1718
+* VITE_RAPIDAPI_KEY=**YOUR_API_KEY**
 
 **Weather API**
 * VITE_WEATHER_API_URL=https://api.openweathermap.org/data/2.5
-* VITE_WEATHER_API_KEY=ba105b400c46f7febbd1de170fe079f2
+* VITE_WEATHER_API_KEY=**YOUR_API_KEY**
 
 **Attractions(Foresquare places) API**
 * VITE_FSQ_API_URL=https://places-api.foursquare.com
-* VITE_FSQ_API_KEY=GDKNLO1OPW3ENZY3TAXVKYIBMLAGOYYDEX3ZX2RTZIHMK1BF
+* VITE_FSQ_API_KEY=**YOUR_API_KEY**
 
 **Country API**
 * VITE_COUNTRY_API_URL=https://restcountries.com/v3.1
 
 **IP Location API**
 * VITE_IPINFO_URL=https://ipinfo.io
-* VITE_IPINFO_TOKEN=6cd6ef1fc4fb9c
+* VITE_IPINFO_TOKEN=**YOUR_API_TOKEN**
 
 ### 4. Start Development
 npm run dev
