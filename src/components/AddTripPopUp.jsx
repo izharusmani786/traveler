@@ -5,11 +5,14 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useDispatch } from 'react-redux';
 import { toast } from "react-toastify";
 import { addTrip } from '../features/trips/tripsSlice';
+import { useSelector } from 'react-redux';
+
 
 function AddTripPopUp({ city, country, countryInfo, lat, lon, weather, onClose }) {
     const [startDate, setStartDate] = useState("");
     const [endDate, setEndDate] = useState("");
     const dispatch = useDispatch();
+    const trips = useSelector((state) => state.trips.trips);
 
     const handleSaveTripWithDates = () => {
         if (!startDate || !endDate) {
@@ -17,13 +20,30 @@ function AddTripPopUp({ city, country, countryInfo, lat, lon, weather, onClose }
             return;
         }
 
-        if (startDate && endDate && endDate < startDate) {
+        if (endDate < startDate) {
             toast.error("End date cannot be before start date");
+            return;
+        }
+
+        const newStart = new Date(startDate).toISOString();
+        const newEnd = new Date(endDate).toISOString();
+
+        // 🔥 Duplicate check
+        const isDuplicate = trips.some((trip) => 
+            trip.city === city &&
+            trip.lat === lat &&
+            trip.lon === lon &&
+            trip.startDate === newStart &&
+            trip.endDate === newEnd
+        );
+
+        if (isDuplicate) {
+            toast.error("Trip already exists!");
             return false;
         }
 
         const tripData = {
-            id: `${city}-${Date.now()}`,
+            id: `${city}-${Date.now()}`, // still fine
             city,
             country,
             lat,
@@ -31,8 +51,8 @@ function AddTripPopUp({ city, country, countryInfo, lat, lon, weather, onClose }
             weather,
             countryInfo,
             createdAt: new Date().toISOString(),
-            startDate: new Date(startDate).toISOString(),
-            endDate: new Date(endDate).toISOString(),
+            startDate: newStart,
+            endDate: newEnd,
             isFavorite: false
         };
 
