@@ -9,12 +9,12 @@ function FavoriteTrips() {
     const dispatch = useDispatch();
     const trips = useSelector((state) => state.trips.trips)
     const favoriteTrips = trips.filter((trip) => trip.isFavorite);
-    const [sortBy, setSortBy] = useState("date-asc");
+    const [sortfavBy, setSortfavBy] = useState("date-asc");
     
     const sortedTrips = useMemo(()=>{
         const sorted = [...favoriteTrips]
 
-        switch (sortBy) {
+        switch (sortfavBy) {
             case "date-asc":
                 return sorted.sort((a, b) => new Date(a.startDate) - new Date(b.startDate));
 
@@ -40,7 +40,7 @@ function FavoriteTrips() {
             default:
                 return sorted;
         }
-    }, [favoriteTrips, sortBy])
+    }, [favoriteTrips, sortfavBy])
     
     const handleOpenTrip = (trip) => {
         navigate(`/trip/${trip.id}`);
@@ -50,7 +50,7 @@ function FavoriteTrips() {
         dispatch(removeTrip(id));
     };
 
-    return <TripList trips={sortedTrips} sortBy={sortBy} setSortBy={setSortBy} title="Favorite Trips" handleOpenTrip={handleOpenTrip} handleRemoveTrip={handleRemoveTrip} />;
+    return <TripList trips={sortedTrips} sortBy={sortfavBy} setSortBy={setSortfavBy} title="Favorite Trips" handleOpenTrip={handleOpenTrip} handleRemoveTrip={handleRemoveTrip} />;
 
 }
 

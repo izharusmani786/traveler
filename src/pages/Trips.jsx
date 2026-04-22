@@ -49,7 +49,7 @@ const Trips = () => {
     dispatch(removeTrip(id));
   };
 
-  return <TripList trips={sortedTrips} sortBy={setSortBy} setSortBy={setSortBy} title="Saved Trips" handleOpenTrip={handleOpenTrip} handleRemoveTrip={handleRemoveTrip} />;
+  return <TripList trips={sortedTrips} sortBy={sortBy} setSortBy={setSortBy} title="Saved Trips" handleOpenTrip={handleOpenTrip} handleRemoveTrip={handleRemoveTrip} />;
 
 };
 
